@@ -27,7 +27,9 @@ public class Premise {
         fuzzysetname=temp[1].trim();
         
         String input=p.substring(0,index).trim();
+       
         test(input);
+        
         
         
     }
@@ -42,13 +44,13 @@ public class Premise {
             double d2=array3.get(1);
             array3.remove(0);
                array3.remove(0);
-            if(array.get(0).equals("and"))
+            if(array.get(0).equals("AND"))
             {
                 array3.add(0, Math.min(d2, d1));
                 array.remove(0);
                 
             }
-            else if(array.get(0).equals("or"))
+            else if(array.get(0).equals("OR"))
             {
                  array3.add(0, Math.max(d2, d1)); 
               array.remove(0);  
@@ -69,6 +71,7 @@ public class Premise {
             
             int a=w.indexOf(" AND ");
             int o=w.indexOf(" OR ");
+          //  System.out.println("index of a:"+a+"index of or:"+o);
             if(o>=0&&a>=0)
             {
                 if(o<a)
@@ -102,6 +105,7 @@ public class Premise {
             
             
         }
+        array2.add(w.trim());
         for(String s:array2)
         {
          String[]t=s.split("=");
@@ -118,6 +122,20 @@ public class Premise {
          }
          
         }
+       // System.out.println("********/*/*");
+      
+        /*for(String ww:array)
+        {
+            
+            System.out.println(""+ww);
+        }
+        for(String hh:array2)
+        {
+            System.out.println(""+hh);
+            
+        }
+        System.out.println("&&&&&&&&");
+               */
     test2();
     } 
 }
